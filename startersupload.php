@@ -43,7 +43,7 @@ mysql_close($connection); // Closing Connection with Server
 <!-- Method can be set as POST for hiding values in URL-->
 <h2>Form</h2>
 <label>Name:</label>
-<input class="input" name="name" type="text" value="">
+<input class="input" name="name" type="text" size="25" maxlength="25" value="">
 <label>Description:</label>
 <input class="input" name="description" type="text" value="">
 <label>Price:</label>
