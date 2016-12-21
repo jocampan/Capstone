@@ -97,8 +97,8 @@ while($row = mysql_fetch_array($result))
 echo "<div>".$row['event_date']."</div>";
 echo "<div>".$row['title']."</div>";
 echo "<div>".$row['description']."</div>";
-
 echo "<br />";
+
 }
 
 mysql_close($con); ?></h4>
@@ -107,7 +107,7 @@ mysql_close($con); ?></h4>
 	    </div>
     <div class="clear"></div>
     <div class="bottom_block">
-      <div class="grid_6">
+      <div class="grid_12">
 
         <nav><ul>
                    <li><a href="index.php">Home</a></li>

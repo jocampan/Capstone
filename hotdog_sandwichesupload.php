@@ -10,13 +10,13 @@ $name = $_POST['name'];
 $description = $_POST['description'];
 $price = $_POST['price'];
 
-if($name !=''||$description !=''){
+if($name !=''and $description !='' and $price =='1234567890$.'){
 //Insert Query of SQL
 $query = mysql_query("insert into menu(name, description, price) values ('$name', '$description', '$price')");
 echo "<br/><br/><span>Data Inserted successfully...!!</span>";
 }
 else{
-echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
+echo "<p>Insertion Failed <br/> Some Fields were left Blank or Integers were not entered into Price Field ....!!</p>";
 }
 }
 
@@ -43,11 +43,11 @@ mysql_close($connection); // Closing Connection with Server
 <!-- Method can be set as POST for hiding values in URL-->
 <h2>Form</h2>
 <label>Name:</label>
-<input class="input" name="name" type="text" value="">
+<input class="input" name="name" type="text" size="20" maxlength="15" value="">
 <label>Description:</label>
-<input class="input" name="description" type="text" value="">
+<input class="input" name="description" type="text" size="20" maxlength="15" value="">
 <label>Price:</label>
-<input class="input" name="price" type="text" value="">
+<input class="input" name="price" type="number" size="20" maxlength="15" value="">
 <input class="submit" name="submit" type="submit" value="Insert">
 </form>
 </div>
