@@ -10,15 +10,21 @@ $event_date = $_POST['event_date'];
 $title = $_POST['title'];
 $description = $_POST['description'];
 
-if($event_date !=''||$title !=''){
+if($event_date =='1234567890//'and $title !='' and $description){
 //Insert Query of SQL
 $query = mysql_query("insert into event_calendar(event_date, title, description) values ('$event_date', '$title', '$description')");
+
+$event_date = '03/22/2010';
+$test_arr  = explode('/', $event_date);
+if (checkdate($test_arr[0], $test_arr[1], $test_arr[2])) {
+    // valid date ...
+}
 
 $success="Data Inserted successfully...!!";
 //echo "<br/><br/><span>Data Inserted successfully...!!</span>";
 }
 else{
-echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
+echo "<p>Insertion Failed <br/> Some Fields are Blank or date is entered incorrectly....!!</p>";
 }
 }
 
@@ -47,9 +53,9 @@ mysql_close($connection); // Closing Connection with Server
 <label>Event_date:</label>
 <input class="input" name="event_date" type="text" value="">
 <label>Title:</label>
-<input class="input" name="title" type="text" value="">
+<input class="input" name="title" type="text" size="20" maxlength="15"value="">
 <label>Description:</label>
-<input class="input" name="description" type="text" value="">
+<textarea name="description" wrap="hard" cols="30" rows="3" maxlength="120" ></textarea>
 <input class="submit" name="submit" type="submit" value="Insert">
 <div><?php echo $success ?></div>
 </form>
